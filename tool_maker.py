@@ -15,6 +15,7 @@ num_args = len(sys.argv)
 #print(os.path.basename(__file__))
 if num_args != 4:
     print( "Usage: python %s <short tool name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>"%(os.path.basename(__file__)) )
+    
     sys.exit(1)
 
 
