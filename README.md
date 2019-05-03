@@ -1,1 +1,1 @@
-# cc3d-nanoHub-tool-setuper
+# CompuCell3D's script for generating nanoHub tools repository
