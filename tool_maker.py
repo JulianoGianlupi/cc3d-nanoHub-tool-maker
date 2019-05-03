@@ -7,11 +7,28 @@ Created on Thu May  2 14:20:26 2019
 import os
 import shutil
 import sys
-source = r'C:\CompuCell3D\Demos\PluginDemos\AdhesionFlexPython' #where the user's simulation files are
-dest = r'C:\Users\jferrari\Documents\cc3d-nanohub-settuper-test' #where the git repo is
 
 
-shortName = 'asdasdasd' #for the -t in the invoke
+
+
+num_args = len(sys.argv)
+#print(os.path.basename(__file__))
+if num_args != 4:
+    print( "Usage: python %s <short tool name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>"%(os.path.basename(__file__)) )
+    sys.exit(1)
+
+
+
+
+
+
+#source = r'C:\CompuCell3D\Demos\PluginDemos\AdhesionFlexPython' #where the user's simulation files are
+#dest = r'C:\Users\jferrari\Documents\cc3d-nanohub-settuper-test' #where the git repo is
+
+shortName = sys.argv[1]
+dest = sys.argv[2]#where the git repo is
+source = sys.argv[3]
+#shortName = 'asdasdasd' #for the -t in the invoke
 
 
 if not os.path.isdir(source):
