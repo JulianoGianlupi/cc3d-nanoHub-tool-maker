@@ -27,6 +27,18 @@ if num_args != 4:
 #dest = r'C:\Users\jferrari\Documents\cc3d-nanohub-settuper-test' #where the git repo is
 
 shortName = sys.argv[1]
+
+if ((len(shortName) > 15) or 
+    (len(shortName) < 3) or 
+    (' ' in shortName) or
+    (not shortName.isalnum())):
+    print("Invalid shortname:\n  ")
+    print("Tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
+    print("Once you register your tool, you cannot change its name, \n so be careful to pick a good one.")
+    
+    
+    sys.exit(1)
+
 dest = sys.argv[2]#where the git repo is
 source = sys.argv[3]
 #shortName = 'asdasdasd' #for the -t in the invoke
