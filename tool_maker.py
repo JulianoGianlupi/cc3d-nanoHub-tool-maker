@@ -87,6 +87,7 @@ os.chdir(dest)
 
 with open('middleware/invoke', 'r') as f:
     new_text = f.read().replace("-t toolname", "-t " + shortName)
+    new_text = new_text.replace("@tool/bin/toolname.sh", "@tool/bin/"+shortName+".sh")
 
 with open('middleware/invoke', 'w') as f:
     f.write(new_text)
@@ -102,6 +103,8 @@ except:
 
 with open(new_sh, 'r') as f:
     new_text = f.read().replace("toolName",cc3d_file_name)
+    
+    
 
 with open(new_sh,'w') as f:
     f.write(new_text)
