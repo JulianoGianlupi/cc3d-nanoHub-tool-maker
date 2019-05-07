@@ -43,4 +43,6 @@ $ git push
 Changing the first command accordinly if you're dealing with the ```.sh``` file.
 
 
+## nanoHub deployement:
 
+Go to ```https://nanohub.org/tools/create``` and follow the instructions there. The one thing you **must** be carefull about is that the ```<short tool name>``` you gave before is **the same** as the one you input on the first box (```Tool Name```) on nanoHub's tool creation page.
