@@ -2,7 +2,7 @@
 
 This script was made to make the generation of GitHub repositories to deploy CompuCell3D tools an easier task.
 
-##Requirements:
+## Requirements:
 * Python 3
 * Be able to run ```python``` from the command line. You can 1) edit your PATH system variable, 2) provide the full path command, or 3) create an alias.
 * GitHub account
