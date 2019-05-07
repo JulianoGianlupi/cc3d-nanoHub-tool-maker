@@ -12,7 +12,6 @@ import sys
 
 
 num_args = len(sys.argv)
-#print(os.path.basename(__file__))
 if num_args != 4:
     print( "Usage: python %s <short tool name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>"%(os.path.basename(__file__)) )
     
@@ -21,10 +20,6 @@ if num_args != 4:
 
 
 
-
-
-#source = r'C:\CompuCell3D\Demos\PluginDemos\AdhesionFlexPython' #where the user's simulation files are
-#dest = r'C:\Users\jferrari\Documents\cc3d-nanohub-settuper-test' #where the git repo is
 
 shortName = sys.argv[1]
 
@@ -39,9 +34,8 @@ if ((len(shortName) > 15) or
     
     sys.exit(1)
 
-dest = sys.argv[2]#where the git repo is
+dest = sys.argv[2]
 source = sys.argv[3]
-#shortName = 'asdasdasd' #for the -t in the invoke
 
 
 if not os.path.isdir(source):
