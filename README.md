@@ -1,6 +1,10 @@
-# CompuCell3D's script for generating nanoHub tools 
+# Script for deploying CompuCell3D simulations as tools in nanoHUB
 
 This script was made to make the generation of GitHub repositories to deploy CompuCell3D tools an easier task.
+
+## Note:
+
+The current version of CompuCell3D in nanoHUB is 3.7.6
 
 ## Requirements:
 * Python 3
