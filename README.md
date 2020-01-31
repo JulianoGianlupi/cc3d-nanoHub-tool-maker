@@ -1,4 +1,4 @@
-# CompuCell3D's script for generating nanoHub tools repository
+# CompuCell3D's script for generating nanoHub tools 
 
 This script was made to make the generation of GitHub repositories to deploy CompuCell3D tools an easier task.
 
