@@ -27,7 +27,7 @@ python tool_maker.py <short tool name> <full-path-to-new-tool-directory> <full-p
 ```
 The ```<short tool name>``` needs to be between 3 and 15 alphanumeric characters without spaces. The ```<full-path-to-your-cc3d-project>``` is where the ```.cc3d``` of your CompuCell3D simulation is. ```<full-path-to-new-tool-directory>``` is the tool repo.
 
-If you're using Windows some files might have lost run permissions. You need to check two files in your tool repo:
+Some files might have lost run permissions. You need to check two files in your tool repo:
 1. ```invoke``` file in the ```middleware``` subdirectory,
 1. And the ```.sh``` file in the ```bin``` subdirectory.
 
