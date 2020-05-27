@@ -90,7 +90,7 @@ try:
     shutil.move(old_sh, new_sh)
     print('renamed', old_sh, new_sh)
 except:
-    print("couldn't rename, carrying on")
+    print("couldn't rename, please do it manually")
 
 with open(new_sh, 'r') as f:
     new_text = f.read().replace("toolFileName", cc3d_file_name)
