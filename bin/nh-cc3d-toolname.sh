@@ -37,6 +37,4 @@ mkdir -p ${USER_DEMO_PATH}/output/
 
 cp -rf ${MAIN_CC3D_FILES}/. ${USER_DEMO_PATH}/ #not checking for existance incase there's been an update
 
-${COMPUCELL3D_HOME}/compucell3d.sh -i ${USER_DEMO_PATH}/${CC3D_TOOL_FILENAME} 
-
-#${PYTHON_EXEC} ${PREFIX_CC3D}/player5/compucell3d.pyw -i ${USER_DEMO_PATH}/$CC3D_TOOL_FILENAME -o ${USER_DEMO_PATH}/output/ -f 50 --currentDir=${PWD} > /dev/null 2>&1
+${COMPUCELL3D_HOME}/compucell3d.sh -i ${USER_DEMO_PATH}/${CC3D_TOOL_FILENAME} -o ${USER_DEMO_PATH}/output/ -f 10001 > /dev/null 2>&1 
