@@ -93,7 +93,9 @@ except:
     print("couldn't rename, carrying on")
 
 with open(new_sh, 'r') as f:
-    new_text = f.read().replace("toolName", cc3d_file_name)
+    new_text = f.read().replace("toolFileName", cc3d_file_name)
+    new_text.replace('toolName', shortName)
 
 with open(new_sh, 'w') as f:
     f.write(new_text)
+    print("updated ", new_sh)
