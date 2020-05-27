@@ -10,8 +10,10 @@ import sys
 
 num_args = len(sys.argv)
 if num_args != 4:
-    print("Usage: python %s <short tool name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>" % (
+    print("Usage: python %s <short-tool-name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>" % (
         os.path.basename(__file__)))
+    print("Short tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
+    print("Once you register your tool, you cannot change the short name name, \n so be careful to pick a good one.")
 
     sys.exit(1)
 
@@ -21,9 +23,9 @@ if ((len(shortName) > 15) or
         (len(shortName) < 3) or
         (' ' in shortName) or
         (not shortName.isalnum())):
-    print("Invalid shortname:\n  ")
-    print("Tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
-    print("Once you register your tool, you cannot change its name, \n so be careful to pick a good one.")
+    print("Invalid <short-tool-name>:\n  ")
+    print("Short tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
+    print("Once you register your tool, you cannot change the short name name, \n so be careful to pick a good one.")
 
     sys.exit(1)
 
@@ -58,7 +60,7 @@ except:
 print("\n\n STEP 2: copying critical tool files\n")
 for name in os.listdir('.'):
     try:
-        if name[0] != '.':
+        if name[0] != '.' and name != '__pycache__':
             if os.path.isdir(name):
                 source_dir = name
                 dest_dir = os.path.join(dest, name)
@@ -93,8 +95,9 @@ except:
     print("couldn't rename, please do it manually")
 
 with open(new_sh, 'r') as f:
-    new_text = f.read().replace("toolFileName", cc3d_file_name)
-    new_text.replace('toolName', shortName)
+    old_text = f.read()
+    new_text = old_text.replace("toolFileName", cc3d_file_name)
+    new_text = new_text.replace("toolName", shortName)
 
 with open(new_sh, 'w') as f:
     f.write(new_text)
