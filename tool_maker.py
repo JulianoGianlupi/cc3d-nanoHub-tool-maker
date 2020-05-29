@@ -53,7 +53,8 @@ print("\n\n STEP 1: copying your simulation files\n")
 tool_cc3d_files = os.path.join(dest, 'main')
 print(source, '-->', tool_cc3d_files)
 try:
-    shutil.copytree(source, tool_cc3d_files, ignore=shutil.ignore_patterns('*.pyc', '*.zip'))
+    shutil.copytree(source, tool_cc3d_files,
+                    ignore=shutil.ignore_patterns('*.pyc', '*.zip', '*.vtk', '*.png', '*.jpeg', '*.jpg'))
 except:
     print("unable to copy")
 
@@ -85,14 +86,17 @@ with open('middleware/invoke', 'r') as f:
 with open('middleware/invoke', 'w') as f:
     f.write(new_text)
 
+os.chmod('middleware/invoke', stat.S_IXUSR)
+
 old_sh = os.path.join('bin', 'nh-cc3d-toolname.sh')
 new_sh = os.path.join('bin', 'nh-cc3d-' + shortName + '.sh')
 
 try:
     shutil.move(old_sh, new_sh)
     print('renamed', old_sh, new_sh)
+    os.chmod(new_sh, stat.S_IXUSR)
 except:
-    print("couldn't rename, please do it manually")
+    print("couldn't rename .sh file in bin, please do it manually")
 
 with open(new_sh, 'r') as f:
     old_text = f.read()
