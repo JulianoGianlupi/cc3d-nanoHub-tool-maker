@@ -7,6 +7,7 @@ Created on Thu May  2 14:20:26 2019
 import os
 import shutil
 import sys
+import stat
 
 num_args = len(sys.argv)
 if num_args != 4:
@@ -98,7 +99,7 @@ with open('middleware/invoke', 'r') as f:
 with open('middleware/invoke', 'w') as f:
     f.write(new_text)
 
-os.chmod('middleware/invoke', stat.S_IXUSR)
+os.chmod('middleware/invoke', 0o777)
 
 old_sh = os.path.join('bin', 'nh-cc3d-toolname.sh')
 new_sh = os.path.join('bin', 'nh-cc3d-' + shortName + '.sh')
@@ -106,7 +107,7 @@ new_sh = os.path.join('bin', 'nh-cc3d-' + shortName + '.sh')
 try:
     shutil.move(old_sh, new_sh)
     print('renamed', old_sh, new_sh)
-    os.chmod(new_sh, stat.S_IXUSR)
+    os.chmod(new_sh, 0o777)
 except:
     print("couldn't rename .sh file in bin, please do it manually")
 
