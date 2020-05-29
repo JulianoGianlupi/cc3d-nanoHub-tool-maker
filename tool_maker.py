@@ -12,8 +12,8 @@ num_args = len(sys.argv)
 if num_args != 4:
     print("Usage: python %s <short-tool-name> <full-path-to-new-directory> <full-path-to-your-cc3d-project>" % (
         os.path.basename(__file__)))
-    print("Short tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
-    print("Once you register your tool, you cannot change the short name name, \n so be careful to pick a good one.")
+    print("Short tool name should be unique and contain 3-15 \nalphanumeric characters, no spaces.")
+    print("Once you register your tool, you cannot change the short name name, \nso be careful to pick a good one.")
 
     sys.exit(1)
 
@@ -24,8 +24,8 @@ if ((len(shortName) > 15) or
         (' ' in shortName) or
         (not shortName.isalnum())):
     print("Invalid <short-tool-name>:\n  ")
-    print("Short tool name should be unique and contain 3-15 \n alphanumeric characters, no spaces.")
-    print("Once you register your tool, you cannot change the short name name, \n so be careful to pick a good one.")
+    print("Short tool name should be unique and contain 3-15 \nalphanumeric characters, no spaces.")
+    print("Once you register your tool, you cannot change the short name name, \nso be careful to pick a good one.")
 
     sys.exit(1)
 
