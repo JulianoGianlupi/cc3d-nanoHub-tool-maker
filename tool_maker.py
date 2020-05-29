@@ -47,7 +47,19 @@ else:
             raise Exception('.cc3d file not found in:', source)
 
 if not os.path.isdir(dest):
-    raise Exception('Path of destination not found:', dest)
+    # raise Exception('Path of destination not found:', dest)
+    print('Path of destination not found:', dest)
+    no_dest = True
+    if no_dest:
+        while no_dest:
+            print('Do you wish for\n', dest)
+            create = input('\nto be created by this program?[y/n]')
+            if create == 'n' or create == 'N' or create == 'y' or create == 'Y':
+                no_dest = False
+        if create == 'n' or create == 'N':
+            raise Exception('Path of destination does not exist:', dest)
+        else:
+            os.makedirs(dest)
 
 print("\n\n STEP 1: copying your simulation files\n")
 tool_cc3d_files = os.path.join(dest, 'main')
