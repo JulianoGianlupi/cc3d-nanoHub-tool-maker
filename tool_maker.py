@@ -102,7 +102,7 @@ with open('middleware/invoke', 'w') as f:
 os.chmod('middleware/invoke', 0o777)
 
 old_sh = os.path.join('bin', 'nh-cc3d-toolname.sh')
-new_sh = os.path.join('bin', 'nh-cc3d-' + shortName + '.sh')
+new_sh = os.path.join('bin', shortName + '.sh')
 
 try:
     shutil.move(old_sh, new_sh)
