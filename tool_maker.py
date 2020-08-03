@@ -113,7 +113,7 @@ except:
 
 with open(new_sh, 'r') as f:
     old_text = f.read()
-    new_text = old_text.replace("toolFileName", cc3d_file_name)
+    new_text = old_text.replace("cc3dFileName", cc3d_file_name)
     new_text = new_text.replace("toolName", shortName)
 
 with open(new_sh, 'w') as f:
