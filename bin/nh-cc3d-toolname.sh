@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# made using https://github.com/JulianoGianlupi/cc3d-nanoHub-tool-setuper
 #made with help from Steven Clark
 
 current_directory=$(pwd)
