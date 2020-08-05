@@ -4,7 +4,7 @@ This script was made to make the generation of GitHub repositories to deploy Com
 
 ## Note:
 
-The current version of CompuCell3D in nanoHUB is 4.1.1
+The current version of CompuCell3D in nanoHUB is 4.2.2
 
 ## Requirements:
 * Python 3
