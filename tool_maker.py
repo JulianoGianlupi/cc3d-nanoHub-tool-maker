@@ -15,6 +15,7 @@ if num_args != 4:
         os.path.basename(__file__)))
     print("Short tool name should be unique and contain 3-15 \nalphanumeric characters, no spaces.")
     print("Once you register your tool, you cannot change the short tool name, \nso be careful to pick a good one.")
+    print("If you have spaces in your path put it inside.")
 
     sys.exit(1)
 
@@ -24,9 +25,10 @@ if ((len(shortName) > 15) or
         (len(shortName) < 3) or
         (' ' in shortName) or
         (not shortName.isalnum())):
-    print("Invalid <short-tool-name>:\n  ")
+    print("Invalid <short-tool-name> or wrong number or arguments:\n  ")
     print("Short tool name should be unique and contain 3-15 \nalphanumeric characters, no spaces.")
     print("Once you register your tool, you cannot change the short tool name, \nso be careful to pick a good one.")
+    print("If you have spaces in your path put it inside.")
 
     sys.exit(1)
 
