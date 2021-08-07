@@ -74,17 +74,19 @@ except:
     print("unable to copy")
 
 print("\n\n STEP 2: copying critical tool files\n")
-for name in os.listdir('.'):
+for rel_name in os.listdir(os.path.dirname(__file__)):
+    name = os.path.join(os.path.dirname(__file__), rel_name)
+    print(name)
     try:
-        if name[0] != '.' and name != '__pycache__':
+        if rel_name[0] != '.' and rel_name != '__pycache__':
             if os.path.isdir(name):
                 source_dir = name
-                dest_dir = os.path.join(dest, name)
+                dest_dir = os.path.join(dest, rel_name)
                 print(source_dir, '-->', dest_dir)
                 shutil.copytree(source_dir, dest_dir)
-            elif not (name == sys.argv[0] or name == "README.md" or name == "tool_maker.py"):
+            elif not (rel_name == sys.argv[0] or rel_name == "README.md" or rel_name == "tool_maker.py"):
                 source_file = name
-                dest_file = os.path.join(dest, name)
+                dest_file = os.path.join(dest, rel_name)
                 print(source_file, '-->', dest_file)
                 shutil.copy(source_file, dest_file)
     except:
@@ -101,7 +103,12 @@ with open('middleware/invoke', 'r') as f:
 with open('middleware/invoke', 'w') as f:
     f.write(new_text)
 
-os.chmod('middleware/invoke', 0o777)
+f_st = os.stat('middleware/invoke')
+os.chmod('middleware/invoke', f_st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
+f_st = os.stat('bin/cc3d_count.sh')
+os.chmod('bin/cc3d_count.sh', f_st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
 
 old_sh = os.path.join('bin', 'nh-cc3d-toolname.sh')
 new_sh = os.path.join('bin', shortName + '.sh')
@@ -110,6 +117,8 @@ try:
     shutil.move(old_sh, new_sh)
     print('renamed', old_sh, new_sh)
     os.chmod(new_sh, 0o777)
+    f_st = os.stat(new_sh)
+    os.chmod(new_sh, f_st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 except:
     print("couldn't rename .sh file in bin, please do it manually")
 
