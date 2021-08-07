@@ -69,7 +69,7 @@ tool_cc3d_files = os.path.join(dest, 'main')
 print(source, '-->', tool_cc3d_files)
 try:
     shutil.copytree(source, tool_cc3d_files,
-                    ignore=shutil.ignore_patterns('*.pyc', '*.zip', '*.vtk', '*.png', '*.jpeg', '*.jpg'))
+                    ignore=shutil.ignore_patterns('*.pyc', '*.zip', '*.vtk', '*.png', '*.jpeg', '*.jpg', '__pycache__'))
 except:
     print("unable to copy")
 
