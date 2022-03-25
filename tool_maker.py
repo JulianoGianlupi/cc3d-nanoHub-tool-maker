@@ -74,7 +74,7 @@ except:
     print("unable to copy")
 
 print("\n\n STEP 2: copying critical tool files\n")
-for rel_name in os.listdir(os.path.dirname(__file__)):
+for rel_name in os.listdir(os.path.dirname(os.path.abspath(__file__))):
     name = os.path.join(os.path.dirname(__file__), rel_name)
     print(name)
     try:
