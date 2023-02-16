@@ -130,3 +130,7 @@ with open(new_sh, 'r') as f:
 with open(new_sh, 'w') as f:
     f.write(new_text)
     print("updated ", new_sh)
+
+f_st = os.stat(new_sh)
+os.chmod(new_sh, f_st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
